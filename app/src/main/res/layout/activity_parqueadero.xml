@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/images">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/EtPlaca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Placa"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColorHint="#000000" />
+
+            <EditText
+                android:id="@+id/EtVehiculo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Tipo de Vehiculo"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColorHint="#000000" />
+
+            <EditText
+                android:id="@+id/EtLlegada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Hora llegada"
+                android:inputType="time"
+                android:minHeight="48dp"
+                android:textColorHint="#000000" />
+
+            <EditText
+                android:id="@+id/EtSalida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Hora de salida"
+                android:inputType="time"
+                android:minHeight="48dp"
+                android:textColorHint="#000000" />
+
+            <EditText
+                android:id="@+id/EtValor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Valor"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColorHint="#000000" />
+
+            <CheckBox
+                android:id="@+id/cbActivo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Activo"
+                android:textColor="#000000"
+                android:textColorHint="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnguardarPark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFEB3B"
+                    android:onClick="adicionar"
+                    android:text="Guardar"
+                    android:textColor="#000000"
+                    app:cornerRadius="10dp" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFEB3B"
+                    android:onClick="modificar"
+                    android:text="Modificar"
+                    android:textColor="#000000"
+                    app:cornerRadius="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnconsultarPark"
+                    android:layout_width="97dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFEB3B"
+                    android:gravity="center"
+                    android:onClick="consultar"
+                    android:text="Consultar"
+                    android:textColor="#000000"
+                    app:cornerRadius="10dp" />
+
+                <Button
+                    android:id="@+id/btnanularPark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFEB3B"
+                    android:onClick="Anular"
+                    android:text="Anular"
+                    android:textColor="#000000"
+                    app:cornerRadius="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btncancelarPark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFEB3B"
+                    android:onClick="cancelar"
+                    android:text="Cancelar"
+                    android:textColor="#000000"
+                    app:cornerRadius="10dp" />
+
+                <Button
+                    android:id="@+id/btnregresarPark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFEB3B"
+                    android:onClick="Regresar"
+                    android:text="Regresar"
+                    android:textColor="#000000"
+                    app:cornerRadius="10dp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnConsultarPark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                android:backgroundTint="#FFEB3B"
+                android:onClick="listar"
+                android:text="Listar Vehiculos"
+                android:textColor="#000000"
+                app:cornerRadius="10dp"
+                tools:layout_editor_absoluteX="206dp"
+                tools:layout_editor_absoluteY="503dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
