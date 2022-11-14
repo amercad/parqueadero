@@ -86,7 +86,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnguardarPark"
+                    android:id="@+id/btnGuardar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -117,7 +117,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnconsultarPark"
+                    android:id="@+id/btnConsultar"
                     android:layout_width="97dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
@@ -130,13 +130,13 @@
                     app:cornerRadius="10dp" />
 
                 <Button
-                    android:id="@+id/btnanularPark"
+                    android:id="@+id/btnAnular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:backgroundTint="#FFEB3B"
-                    android:onClick="Anular"
+                    android:onClick="regresar"
                     android:text="Anular"
                     android:textColor="#000000"
                     app:cornerRadius="10dp" />
@@ -149,7 +149,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btncancelarPark"
+                    android:id="@+id/btnCancelar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
@@ -161,13 +161,13 @@
                     app:cornerRadius="10dp" />
 
                 <Button
-                    android:id="@+id/btnregresarPark"
+                    android:id="@+id/btnRegresar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:backgroundTint="#FFEB3B"
-                    android:onClick="Regresar"
+                    android:onClick="regresar"
                     android:text="Regresar"
                     android:textColor="#000000"
                     app:cornerRadius="10dp" />
@@ -175,7 +175,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/btnConsultarPark"
+                android:id="@+id/btnListar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"

@@ -23,7 +23,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ParqueaderoActivity extends AppCompatActivity {
-
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     TextView etPlaca, etTipoVehiculo, etHoraLlegada, etHoraSalida, etValor;
     CheckBox cbActivo;
@@ -48,6 +47,11 @@ public class ParqueaderoActivity extends AppCompatActivity {
         sw = 0;
     }
 
+    public void regresar(View view) {
+        Intent intRegistrar=new Intent(this, MainActivity.class);
+        startActivity(intRegistrar);
+    }
+
     public void adicionar(View view) {
         placa = etPlaca.getText().toString();
         tipoVehiculo = etTipoVehiculo.getText().toString();
@@ -68,7 +72,7 @@ public class ParqueaderoActivity extends AppCompatActivity {
             vehiculo.put("Activo", "si");
 
             // Add a new document with a generated ID
-            db.collection("parking-c37bd")
+            db.collection("parking")
                 .add(vehiculo)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
@@ -92,7 +96,7 @@ public class ParqueaderoActivity extends AppCompatActivity {
             Toast.makeText(this, "La placa es requerido", Toast.LENGTH_SHORT).show();
             etPlaca.requestFocus();
         } else {
-            db.collection("parking-c37bd")
+            db.collection("parking")
                 .whereEqualTo("Placa", placa)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -144,7 +148,7 @@ public class ParqueaderoActivity extends AppCompatActivity {
                 vehiculo.put("HoraSalida", horaSalida);
                 vehiculo.put("Valor", valor);
                 vehiculo.put("Activo", "si");
-                db.collection("parking-c37bd").document(placaId)
+                db.collection("parking").document(placaId)
                     .set(vehiculo)
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
@@ -164,7 +168,7 @@ public class ParqueaderoActivity extends AppCompatActivity {
 
     }
 
-    public void Anular(View view) {
+    public void anular(View view) {
         if (sw == 0) {
             Toast.makeText(this, "Para anular debe primero consultar", Toast.LENGTH_SHORT).show();
             etPlaca.requestFocus();
@@ -187,22 +191,22 @@ public class ParqueaderoActivity extends AppCompatActivity {
                 vehiculo.put("HoraSalida", horaSalida);
                 vehiculo.put("Valor", valor);
                 vehiculo.put("Activo", "no");
-                db.collection("parking-c37bd").document(placaId)
-                        .set(vehiculo)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast.makeText(ParqueaderoActivity.this, "Vehiculo anulado correctmente...", Toast.LENGTH_SHORT).show();
-                                limpiarCampos();
-                                cbActivo.setClickable(false);
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(ParqueaderoActivity.this, "Error anulando vehiculo...", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                db.collection("parking").document(placaId)
+                    .set(vehiculo)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(ParqueaderoActivity.this, "Vehiculo anulado correctmente...", Toast.LENGTH_SHORT).show();
+                            limpiarCampos();
+                            cbActivo.setClickable(false);
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(ParqueaderoActivity.this, "Error anulando vehiculo...", Toast.LENGTH_SHORT).show();
+                        }
+                    });
             }
         }
 

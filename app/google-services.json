@@ -7,9 +7,67 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:904638353:android:bf934efbd2edcd5ca27430",
+        "android_client_info": {
+          "package_name": "com.example.inventario"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904638353-5i72nmr615b89eurf08ude8bqg6kkenv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxWLNs98iDV8g10RIaWKEwqZf7adbBvpM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904638353-5i72nmr615b89eurf08ude8bqg6kkenv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:904638353:android:aceb53f44f938938a27430",
         "android_client_info": {
           "package_name": "com.example.parqueadero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904638353-5i72nmr615b89eurf08ude8bqg6kkenv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxWLNs98iDV8g10RIaWKEwqZf7adbBvpM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904638353-5i72nmr615b89eurf08ude8bqg6kkenv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904638353:android:9e466ed4b52b3467a27430",
+        "android_client_info": {
+          "package_name": "com.example.paseo"
         }
       },
       "oauth_client": [

@@ -33,7 +33,13 @@ public class ParkingAdapter extends RecyclerView.Adapter <ParkingAdapter.Parking
         holder.horaLlegada.setText("Hora de llegada: " + objParking.get(position).getHoraLlegada());
         holder.horaSalida.setText("Hora de salida: " + objParking.get(position).getHoraSalida());
         holder.valor.setText("Valor: " + objParking.get(position).getValor());
-        holder.estado.setText("Estado: " + objParking.get(position).getEstado());
+
+        if (objParking.get(position).getEstado().equalsIgnoreCase("si")) {
+            holder.estado.setText("Estado: Activo");
+        } else {
+            holder.estado.setText("Estado: Inactivo");
+        }
+
     }
 
     @Override

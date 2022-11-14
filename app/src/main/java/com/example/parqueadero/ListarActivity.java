@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class ListarActivity extends AppCompatActivity {
 
-    RecyclerView recyclerpaseo;
+    RecyclerView recyclerParking;
     ArrayList<Parking> listaParking;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -28,15 +28,15 @@ public class ListarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar);
 
-        recyclerpaseo = findViewById(R.id.rvListarParking);
+        recyclerParking = findViewById(R.id.rvListarParking);
         listaParking = new ArrayList<>();
-        recyclerpaseo.setLayoutManager(new LinearLayoutManager(this.getApplicationContext()));
-        recyclerpaseo.setHasFixedSize(true);
+        recyclerParking.setLayoutManager(new LinearLayoutManager(this.getApplicationContext()));
+        recyclerParking.setHasFixedSize(true);
         cargarParking();
     }
 
     private void cargarParking() {
-        db.collection("parking-c37bd")
+        db.collection("parking")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -54,7 +54,7 @@ public class ListarActivity extends AppCompatActivity {
                                 listaParking.add(objParking);
                             }
                             ParkingAdapter adpaseo = new ParkingAdapter(listaParking);
-                            recyclerpaseo.setAdapter(adpaseo);
+                            recyclerParking.setAdapter(adpaseo);
                         } else {
                             //Log.w(TAG, "Error getting documents.", task.getException());
                         }
